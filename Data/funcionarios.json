@@ -1,0 +1,10 @@
+[
+  {
+    "id_funcionario": 201,
+    "nome": "Maria Oliveira",
+    "cargo": "Atendente",
+    "turno": "manha",
+    "salario": 1800.00,
+    "data_admissao": "2024-03-10"
+  }
+]
