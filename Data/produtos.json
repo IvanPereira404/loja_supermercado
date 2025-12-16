@@ -1,15 +1,5 @@
 [
     {
-        "id": "0",
-        "nome": "apagar",
-        "categoria": "",
-        "preco_custo": "",
-        "preco_venda": "",
-        "estoque": "",
-        "codigo_barras": "",
-        "validade": ""
-    },
-    {
         "id": "1",
         "nome": "skibidi toilet toy",
         "categoria": "brinquedo",
