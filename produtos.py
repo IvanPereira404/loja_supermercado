@@ -129,4 +129,4 @@ def apagar_produto():
     print("Produto não encontrado.")
     return None
 
-listar_produtos()
+atualizar_produto()
