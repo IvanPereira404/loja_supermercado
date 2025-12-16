@@ -1,0 +1,12 @@
+[
+    {
+        "id": "1",
+        "nome":"",
+        "categoria":"",
+        "preco_custo":"",
+        "preco_venda":"",
+        "estoque":"",
+        "codigo_barras":"",
+        "validade":""
+    }
+]
