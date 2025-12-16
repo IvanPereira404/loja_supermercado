@@ -37,6 +37,17 @@ def criar_produto():
 def listar_produtos():
     dados = carregar_dados()
 
+    print("Produtos encontrados:")
+    for produto in dados:
+        print(f"ID: {produto['id']}")
+        print(f"Nome: {produto['nome']}")
+        print(f"Categoria: {produto['categoria']}")
+        print(f"Preço de Custo: {produto['preco_custo']}")
+        print(f"Preço de Venda: {produto['preco_venda']}")
+        print(f"Estoque: {produto['estoque']}")
+        print(f"Código de Barras: {produto['codigo_barras']}")
+        print(f"Validade: {produto['validade']}")
+        print("-" * 40)
     return dados
 
 def encontrar_produto():

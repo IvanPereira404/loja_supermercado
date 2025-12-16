@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "0",
         "nome": "",
         "categoria": "",
         "preco_custo": "",
@@ -10,7 +10,7 @@
         "validade": ""
     },
     {
-        "id": "2",
+        "id": "1",
         "nome": "skibidi toilet toy",
         "categoria": "brinquedo",
         "preco_custo": "10",
