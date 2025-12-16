@@ -12,28 +12,28 @@ def salvar_dados(dados):
     with open(FICHEIRO, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=4, ensure_ascii=False)
 
-def criar_produto(nome, categoria, preco_custo, preco_venda, estoque, codigo_barras, validade):
+#create
+def criar_produto():
+    produto = {}  
+
+    produto["id"] = str(len(carregar_dados()) + 1)
+    produto["nome"] = input("Nome do produto: ")
+    produto["categoria"] = input("Categoria do produto: ")
+    produto["preco_custo"] = input("Preço de custo: ")
+    produto["preco_venda"] = input("Preço de venda: ")
+    produto["estoque"] = input("Quantidade em estoque: ")
+    produto["codigo_barras"] = input("Código de barras: ")
+    produto["validade"] = input("Validade (formato: AAAA-MM-DD): ")
+
     dados = carregar_dados()
-
-    ultimo_id = max([int(p["id"]) for p in dados], default=0)
-    novo_id = ultimo_id + 1
-
-    produto = {
-        "id": str(novo_id),
-        "nome": nome,
-        "categoria": categoria,
-        "preco_custo": str(preco_custo),
-        "preco_venda": str(preco_venda),
-        "estoque": str(estoque),
-        "codigo_barras": codigo_barras,
-        "validade": validade
-    }
-
     dados.append(produto)
+
     salvar_dados(dados)
 
+    print("Produto criado com sucesso!")
     return produto
 
+#read
 def listar_produtos():
     dados = carregar_dados()
 
@@ -43,3 +43,5 @@ def encontra_produto_por_id(produto_id):
     dados = carregar_dados()
 
     return next((p for p in dados if p["id"] == produto_id), None)
+
+#update
