@@ -33,3 +33,13 @@ def criar_produto(nome, categoria, preco_custo, preco_venda, estoque, codigo_bar
     salvar_dados(dados)
 
     return produto
+
+def listar_produtos():
+    dados = carregar_dados()
+
+    return dados
+
+def encontra_produto_por_id(produto_id):
+    dados = carregar_dados()
+
+    return next((p for p in dados if p["id"] == produto_id), None)
