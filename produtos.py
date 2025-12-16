@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 
-FICHEIRO = "produtos.json"
+FICHEIRO = ".\\Data\\produtos.json"
 
 def carregar_dados():
     with open(FICHEIRO, "r", encoding="utf-8") as f:
@@ -45,6 +45,9 @@ def encontrar_produto():
     produto_nome = input("Qual o nome do produto que deseja encontrar?")
     for produto in dados:
         if produto["nome"] == produto_nome:
+            print("Produto encontrado!")
+            for campo, valor in produto.items():
+                print(f"{campo.capitalize()}: {valor}")
             return produto
 
     print("Produto não encontrado.")
@@ -114,3 +117,5 @@ def apagar_produto():
 
     print("Produto não encontrado.")
     return None
+
+listar_produtos()

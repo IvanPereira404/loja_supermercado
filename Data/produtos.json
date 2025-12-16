@@ -1,12 +1,22 @@
 [
     {
         "id": "1",
-        "nome":"",
-        "categoria":"",
-        "preco_custo":"",
-        "preco_venda":"",
-        "estoque":"",
-        "codigo_barras":"",
-        "validade":""
+        "nome": "",
+        "categoria": "",
+        "preco_custo": "",
+        "preco_venda": "",
+        "estoque": "",
+        "codigo_barras": "",
+        "validade": ""
+    },
+    {
+        "id": "2",
+        "nome": "skibidi toilet toy",
+        "categoria": "brinquedo",
+        "preco_custo": "10",
+        "preco_venda": "15",
+        "estoque": "30",
+        "codigo_barras": "123681247",
+        "validade": "00-00-0000"
     }
 ]
