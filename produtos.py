@@ -14,6 +14,11 @@ def salvar_dados(dados):
 
 #create
 def criar_produto():
+    """função para criar um produto novo no ficheiro json
+
+    Returns:
+        novo produto
+    """
     produto = {}  
 
     produto["id"] = str(len(carregar_dados()) + 1)
@@ -35,6 +40,11 @@ def criar_produto():
 
 #read
 def listar_produtos():
+    """função para listar produtos
+
+    Returns:
+        dados do ficheiro json
+    """
     dados = carregar_dados()
 
     print("Produtos encontrados:")
@@ -51,6 +61,11 @@ def listar_produtos():
     return dados
 
 def encontrar_produto():
+    """função para encontrar informação sobre um certo produto dado o nome
+
+    Returns:
+        informação do produto caso exista
+    """
     dados = carregar_dados()
     
     produto_nome = input("Qual o nome do produto que deseja encontrar?")
@@ -66,6 +81,11 @@ def encontrar_produto():
 
 #update
 def atualizar_produto():
+    """função para fazer alterações em produtos
+
+    Returns:
+        produto alterado caso exista
+    """
     dados = carregar_dados()
 
     produto_nome = input("Qual o nome do produto que deseja atualizar? ")
@@ -113,6 +133,11 @@ def atualizar_produto():
 
 #delete
 def apagar_produto():
+    """função para apagar um produto
+
+    Returns:
+        produto sem informação (apagado) caso exista
+    """
     dados = carregar_dados()
 
     produto_nome = input("Qual o nome do produto que deseja apagar? ")
@@ -129,4 +154,3 @@ def apagar_produto():
     print("Produto não encontrado.")
     return None
 
-apagar_produto()
