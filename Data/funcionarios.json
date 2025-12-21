@@ -1,10 +1,18 @@
 [
-  {
-    "id_funcionario": 201,
-    "nome": "Maria Oliveira",
-    "cargo": "Atendente",
-    "turno": "manha",
-    "salario": 1800.00,
-    "data_admissao": "2024-03-10"
-  }
+    {
+        "id_funcionario": 201,
+        "nome": "Maria Oliveira",
+        "cargo": "Atendente",
+        "turno": "manha",
+        "salario": 1800.0,
+        "data_admissao": "2024-03-10"
+    },
+    {
+        "id_funcionario": 202,
+        "nome": "Vicente",
+        "cargo": "Pescador",
+        "turno": "tarde",
+        "salario": 1900,
+        "data_admissao": "2024-01-01"
+    }
 ]
