@@ -1,5 +1,9 @@
 from produtos import *
 from crudclientes import *
+from crudfornecedores import *
+from crudfuncionarios import *
+from crudcategorias import *
+from crudvendas import *
 
 def menu_principal():
     print("Menu:")
@@ -87,6 +91,36 @@ def menu_opc_1():
             menu_principal()
         else:
             print("Opção inválida! Tente novamente.")
+
+def menu_opc_2():
+    print("Menu Fornecedores:")
+    print("1. Criar/Adicionar Fornecedor")
+    print("2. Listar Fornecedores")
+    print("3. Atualizar Fornecedor")
+    print("4. Sair")
+    while True:
+        escolha = input("Escolha uma opção(1-4): ")
+        
+        if escolha == '1':
+            pass  # Implementar criação de fornecedor
+        elif escolha == '2':
+            pass  # Implementar listagem de fornecedores
+        elif escolha == '3':
+            pass  # Implementar atualização de fornecedor
+        elif escolha == '4':
+            print("Saindo...")
+            menu_principal()
+        else:
+            print("Opção inválida! Tente novamente.")
+
+def menu_opc_3():
+    pass  # Implementar menu para Funcionários
+
+def menu_opc_5():
+    pass  # Implementar menu para Categorias
+
+def menu_opc_6():
+    pass  # Implementar menu para Vendas
 
 while True:
     menu_principal()
