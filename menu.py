@@ -1,3 +1,4 @@
+from crudCategorias import list_categorias
 from produtos import *
 from crudclientes import *
 from crudfornecedores import *
@@ -136,7 +137,7 @@ def menu_opc_3():
     # Implementar menu para Funcionários
     print("Menu Funcionários:")
     print("1. Criar/Adicionar Funcionário")
-    print("2. Listar Funcionários")
+    print("2. Apagar Funcionários")
     print("3. Atualizar Funcionário")
     print("4. Sair")
 
@@ -144,11 +145,32 @@ def menu_opc_3():
         escolha = input("Escolha uma opção(1-4): ")
 
         if escolha == '1':
-            pass  # Implementar criação de funcionário
+            create_funcionario(
+                nome=input("Nome: "),
+                cargo=input("Cargo: "),
+                turno=input("Turno: "),
+                salario=float(input("Salário: ")),
+                data_admissao=input("Data de Admissão (YYYY-MM-DD): ")
+            )
         elif escolha == '2':
-            pass  # Implementar listagem de funcionários
+            def delete_funcionario(input_id):
+                dados = data_read()
+                for i, c in enumerate(dados):
+                    if c.get("id_funcionario") == input_id:
+                        del dados[i]
+                        salvar_dados(dados)
+                        print("Funcionário apagado.")
+                        return
+                print("Funcionário não encontrado.")
         elif escolha == '3':
-            pass  # Implementar atualização de funcionário
+            update_funcionario(
+                id_funcionario=int(input("ID do Funcionário a atualizar: ")),
+                nome=input("Novo Nome (deixe em branco para não alterar): ") or None,
+                cargo=input("Novo Cargo (deixe em branco para não alterar): ") or None,
+                turno=input("Novo Turno (deixe em branco para não alterar): ") or None,
+                salario=float(input("Novo Salário (deixe em branco para não alterar): ") or 0) or None,
+                data_admissao=input("Nova Data de Admissão (YYYY-MM-DD) (deixe em branco para não alterar): ") or None
+            )
         elif escolha == '4':
             print("Saindo...")
             menu_principal()
@@ -160,18 +182,25 @@ def menu_opc_5():
     print("Menu Categorias:")
     print("1. Criar/Adicionar Categoria")
     print("2. Listar Categorias")
-    print("3. Atualizar Categoria")
+    print("3. Apagar Categoria")
     print("4. Sair")
 
     while True:
         escolha = input("Escolha uma opção(1-4): ")
-
+       
         if escolha == '1':
-            pass  # Implementar criação de categoria
+            create_categoria(
+                {
+                    "nome": input("Nome: "),
+                    "descricao": input("Descrição: ")
+                }
+            )
         elif escolha == '2':
-            pass  # Implementar listagem de categorias
+           list_categorias()
         elif escolha == '3':
-            pass  # Implementar atualização de categoria
+            delete_categoria(
+                int(input("ID da Categoria a apagar: "))
+            )
         elif escolha == '4':
             print("Saindo...")
             menu_principal()
