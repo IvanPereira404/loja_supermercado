@@ -1,9 +1,9 @@
 from crudCategorias import list_categorias
 from CrudProdutos import *
 from crudclientes import *
-from crudfornecedores import *
+from CrudFornecedores import *
 from crudfuncionarios import *
-from crudcategorias import *
+from crudCategorias import *
 from crudvendas import *
 
 def menu_principal():
