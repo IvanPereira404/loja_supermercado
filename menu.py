@@ -160,6 +160,12 @@ def menu_opc_2():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_3():
+    """Menu interativo para gerir funcionários.
+
+    Permite criar, apagar e atualizar funcionários. A opção de apagar define
+    uma função interna que remove um funcionário por ID e salva os dados no
+    armazenamento persistente.
+    """
     # Implementar menu para Funcionários
     print("Menu Funcionários:")
     print("1. Criar/Adicionar Funcionário")
@@ -180,6 +186,11 @@ def menu_opc_3():
             )
         elif escolha == '2':
             def delete_funcionario(input_id):
+                """Apaga um funcionário identificado pelo seu ID.
+
+                Procura o funcionário na lista persistida e, se encontrado,
+                remove-o e salva os dados atualizados.
+                """
                 dados = data_read()
                 for i, c in enumerate(dados):
                     if c.get("id_funcionario") == input_id:
