@@ -3,7 +3,7 @@ import os
 
 #conecta este ficheiro ao JSON clientes
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DADOS = os.path.join(BASE_DIR, "clientes.json")
+DADOS = os.path.join(BASE_DIR, "Data/clientes.json")
 
 
 def data_read():
