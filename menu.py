@@ -212,18 +212,26 @@ def menu_opc_6():
     print("Menu Vendas:")
     print("1. Criar/Adicionar Venda")
     print("2. Listar Vendas")
-    print("3. Atualizar Venda")
+    print("3. Procurar/Encontrar Venda")
     print("4. Sair")
 
     while True:
         escolha = input("Escolha uma opção(1-4): ")
 
         if escolha == '1':
-            pass  # Implementar criação de venda
+            create_venda(
+                {
+                    "id_cliente": int(input("ID do Cliente: ")),
+                    "itens": eval(input("Itens (formato lista de dicionários): ")),
+                    "forma_pagamento": input("Forma de Pagamento: ")
+                }
+            )
         elif escolha == '2':
-            pass  # Implementar listagem de vendas
+            list_vendas()
         elif escolha == '3':
-            pass  # Implementar atualização de venda
+            get_venda(
+                int(input("ID da Venda a procurar: "))
+            )
         elif escolha == '4':
             print("Saindo...")
             menu_principal()
