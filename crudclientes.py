@@ -24,8 +24,16 @@ def data_read():
     except json.JSONDecodeError:
         return []
 
-#Salva os dados no ficheiro JSON
+
 def salvar_dados(dados):
+    """Salva os dados no ficheiro JSON.
+
+    Args:
+        dados (list): lista de clientes em formato de dicionário
+
+    Returns:
+        None
+    """
     with open(DADOS, "w", encoding="utf-8") as f:
         json.dump(dados, f, indent=4, ensure_ascii=False)
     print("Dados salvos com sucesso")
@@ -35,8 +43,19 @@ def proximo_id(dados):
     ids = [u.get("id_cliente", 0) for u in dados if isinstance(u, dict)]
     return max(ids, default=0) + 1
 
-#Funcao para criar clientes com os parametros e fazendo append para dentro do ficheiro JSON
 def create_cliente(nome, telefone, email, endereco, data_cadastro):
+    """Cria um novo cliente e o adiciona ao ficheiro JSON.
+
+    Args:
+        nome (str): Nome do cliente.
+        telefone (str): Telefone do cliente.
+        email (str): Email do cliente.
+        endereco (str): Endereço do cliente.
+        data_cadastro (str): Data de cadastro do cliente (formato livre).
+
+    Returns:
+        None
+    """
     dados = data_read()
 
     cliente = {
@@ -51,8 +70,14 @@ def create_cliente(nome, telefone, email, endereco, data_cadastro):
     dados.append(cliente)
     salvar_dados(dados)
 
-#Funcao que mostra os clientes presentes no ficheiro JSON ou mostra que nao ha clientes
+
 def read_clientes():
+    """Mostra todos os clientes presentes no ficheiro JSON.
+
+    Se o ficheiro estiver vazio, mostra uma mensagem informando que
+    nenhum cliente foi encontrado.
+
+    """
     dados = data_read()
 
     if not dados:
@@ -69,8 +94,13 @@ def read_clientes():
             f'Data_Cadastro: {c["data_cadastro"]}'
         )
 
-#Funcao de update atraves do id cliente selecionado podendo alterar so 1 ou mais campos sem ter de alterar todos
+
 def update_cliente(id_cliente, nome=None, telefone=None, email=None, endereco=None, data_cadastro=None):
+    """Atualiza campos de um cliente identificado pelo seu ID.
+
+    Parâmetros opcionais com valor None são ignorados (não alteram o campo).
+    Imprime mensagem se o cliente for atualizado ou se não for encontrado.
+    """
     dados = data_read()
 
     for c in dados:
@@ -92,8 +122,14 @@ def update_cliente(id_cliente, nome=None, telefone=None, email=None, endereco=No
 
     print("Cliente não encontrado.")
 
-#Funcao para dar delete do cliente atravez do id
+
 def delete_cliente(id_cliente):
+    """Remove um cliente identificado pelo seu ID.
+
+    Procura o cliente na lista persistida e, se encontrado,
+    remove-o e salva os dados atualizados.
+    Imprime mensagem se o cliente for atualizado ou se não for encontrado.
+    """
     dados = data_read()
     novos_dados = [c for c in dados if c.get("id_cliente") != id_cliente]
 
