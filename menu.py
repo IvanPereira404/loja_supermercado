@@ -105,11 +105,27 @@ def menu_opc_2():
         escolha = input("Escolha uma opção(1-4): ")
         
         if escolha == '1':
-            pass  # Implementar criação de fornecedor
+            create_fornecedor(
+                {
+                    "nome": input("Nome: "),
+                    "NIF": input("NIF: "),
+                    "telefone": input("Telefone: "),
+                    "email": input("Email: "),
+                    "categoria_fornecida": input("Categoria Fornecida: ")
+                }
+            )
         elif escolha == '2':
-            pass  # Implementar listagem de fornecedores
+            list_fornecedores()
         elif escolha == '3':
-            pass  # Implementar atualização de fornecedor
+            update_fornecedor(
+                int(input("ID do Fornecedor a atualizar: ")),
+                {
+                    "nome": input("Novo Nome (deixe em branco para não alterar): ") or None,
+                    "NIF": input("Novo NIF (deixe em branco para não alterar): ") or None,
+                    "telefone": input("Novo Telefone (deixe em branco para não alterar): ") or None,
+                    "email": input("Novo Email (deixe em branco para não alterar): ") or None,
+                    "categoria_fornecida": input("Nova Categoria Fornecida (deixe em branco para não alterar): ") or None
+                })
         elif escolha == '4':
             print("Saindo...")
             menu_principal()
