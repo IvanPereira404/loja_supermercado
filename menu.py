@@ -31,6 +31,7 @@ def menu_principal():
 
 
 def menu_opc_4():
+    # Menu para Produtos
     print("Menu Produtos:")
     print("1. Criar/Adicionar Produto")
     print("2. Listar Produtos")
@@ -60,6 +61,7 @@ def menu_opc_4():
 
 
 def menu_opc_1():
+    # Menu para Clientes
     print("Menu Clientes:")
     print("1. Criar/Adicionar Cliente")
     print("2. Listar Clientes")
@@ -93,6 +95,7 @@ def menu_opc_1():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_2():
+    # Menu para Fornecedores
     print("Menu Fornecedores:")
     print("1. Criar/Adicionar Fornecedor")
     print("2. Listar Fornecedores")
@@ -114,13 +117,73 @@ def menu_opc_2():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_3():
-    pass  # Implementar menu para Funcionários
+    # Implementar menu para Funcionários
+    print("Menu Funcionários:")
+    print("1. Criar/Adicionar Funcionário")
+    print("2. Listar Funcionários")
+    print("3. Atualizar Funcionário")
+    print("4. Sair")
+
+    while True:
+        escolha = input("Escolha uma opção(1-4): ")
+
+        if escolha == '1':
+            pass  # Implementar criação de funcionário
+        elif escolha == '2':
+            pass  # Implementar listagem de funcionários
+        elif escolha == '3':
+            pass  # Implementar atualização de funcionário
+        elif escolha == '4':
+            print("Saindo...")
+            menu_principal()
+        else:
+            print("Opção inválida! Tente novamente.")
 
 def menu_opc_5():
-    pass  # Implementar menu para Categorias
+    # Implementar menu para Categorias
+    print("Menu Categorias:")
+    print("1. Criar/Adicionar Categoria")
+    print("2. Listar Categorias")
+    print("3. Atualizar Categoria")
+    print("4. Sair")
+
+    while True:
+        escolha = input("Escolha uma opção(1-4): ")
+
+        if escolha == '1':
+            pass  # Implementar criação de categoria
+        elif escolha == '2':
+            pass  # Implementar listagem de categorias
+        elif escolha == '3':
+            pass  # Implementar atualização de categoria
+        elif escolha == '4':
+            print("Saindo...")
+            menu_principal()
+        else:
+            print("Opção inválida! Tente novamente.")
 
 def menu_opc_6():
-    pass  # Implementar menu para Vendas
+    # Implementar menu para Vendas
+    print("Menu Vendas:")
+    print("1. Criar/Adicionar Venda")
+    print("2. Listar Vendas")
+    print("3. Atualizar Venda")
+    print("4. Sair")
+
+    while True:
+        escolha = input("Escolha uma opção(1-4): ")
+
+        if escolha == '1':
+            pass  # Implementar criação de venda
+        elif escolha == '2':
+            pass  # Implementar listagem de vendas
+        elif escolha == '3':
+            pass  # Implementar atualização de venda
+        elif escolha == '4':
+            print("Saindo...")
+            menu_principal()
+        else:
+            print("Opção inválida! Tente novamente.")
 
 while True:
     menu_principal()
