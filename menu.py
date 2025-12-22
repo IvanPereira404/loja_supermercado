@@ -1,12 +1,23 @@
+"""Módulo de menus interativos para a aplicação 'loja_supermercado'.
+
+Este módulo fornece funções que exibem menus de linha de comando para gerir
+clientes, fornecedores, funcionários, produtos, categorias e vendas. Cada
+submenu chama funções CRUD importadas de outros módulos do projeto.
+"""
 from crudCategorias import list_categorias
 from CrudProdutos import *
 from crudclientes import *
-from crudfornecedores import *
+from CrudFornecedores import *
 from crudfuncionarios import *
-from crudcategorias import *
+from crudCategorias import *
 from crudvendas import *
 
 def menu_principal():
+    """Exibe o menu principal e redireciona para o submenu selecionado.
+
+    Solicita ao utilizador uma opção (1-6) e invoca o respetivo submenu.
+    Não retorna valor; o controlo é passado para as funções de submenu.
+    """
     print("Menu:")
     print("1. Clientes")
     print("2. Fornecedores")
@@ -32,6 +43,11 @@ def menu_principal():
 
 
 def menu_opc_4():
+    """Menu interativo para gerir produtos.
+
+    Oferece opções para criar, listar, procurar, atualizar e apagar produtos.
+    As ações chamam funções importadas do módulo de produtos.
+    """
     # Menu para Produtos
     print("Menu Produtos:")
     print("1. Criar/Adicionar Produto")
@@ -62,6 +78,11 @@ def menu_opc_4():
 
 
 def menu_opc_1():
+    """Menu interativo para gerir clientes.
+
+    Permite criar, listar e atualizar clientes. Solicita os dados ao utilizador
+    e invoca as funções CRUD correspondentes do módulo de clientes.
+    """
     # Menu para Clientes
     print("Menu Clientes:")
     print("1. Criar/Adicionar Cliente")
@@ -96,6 +117,11 @@ def menu_opc_1():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_2():
+    """Menu interativo para gerir fornecedores.
+
+    Permite criar, listar e atualizar fornecedores solicitando os campos
+    necessários ao utilizador e chamando as funções correspondentes.
+    """
     # Menu para Fornecedores
     print("Menu Fornecedores:")
     print("1. Criar/Adicionar Fornecedor")
@@ -134,6 +160,12 @@ def menu_opc_2():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_3():
+    """Menu interativo para gerir funcionários.
+
+    Permite criar, apagar e atualizar funcionários. A opção de apagar define
+    uma função interna que remove um funcionário por ID e salva os dados no
+    armazenamento persistente.
+    """
     # Implementar menu para Funcionários
     print("Menu Funcionários:")
     print("1. Criar/Adicionar Funcionário")
@@ -154,6 +186,11 @@ def menu_opc_3():
             )
         elif escolha == '2':
             def delete_funcionario(input_id):
+                """Apaga um funcionário identificado pelo seu ID.
+
+                Procura o funcionário na lista persistida e, se encontrado,
+                remove-o e salva os dados atualizados.
+                """
                 dados = data_read()
                 for i, c in enumerate(dados):
                     if c.get("id_funcionario") == input_id:
@@ -178,6 +215,11 @@ def menu_opc_3():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_5():
+    """Menu interativo para gerir categorias.
+
+    Permite criar, listar e apagar categorias, chamando as funções do módulo
+    de categorias conforme a opção escolhida pelo utilizador.
+    """
     # Implementar menu para Categorias
     print("Menu Categorias:")
     print("1. Criar/Adicionar Categoria")
@@ -208,6 +250,12 @@ def menu_opc_5():
             print("Opção inválida! Tente novamente.")
 
 def menu_opc_6():
+    """Menu interativo para gerir vendas.
+
+    Permite criar uma venda (pedindo ID do cliente, itens e forma de pagamento),
+    listar vendas e procurar uma venda por ID. Chama as funções do módulo de
+    vendas para efetuar cada operação.
+    """
     # Implementar menu para Vendas
     print("Menu Vendas:")
     print("1. Criar/Adicionar Venda")
