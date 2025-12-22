@@ -6,5 +6,14 @@
     "telefone": "(351) 919233221",
     "email": "contato@abc.com.pt",
     "categoria_fornecida": "Bebidas"
+  },
+  {
+    "nome": "Ivan",
+    "NIF": "87807879",
+    "telefone": "8697697698",
+    "email": "ivan@dele.com",
+    "categoria_fornecida": "dssaddsa",
+    "id_fornecedor": 102,
+    "created_at": "2025-12-22T21:07:40.522597"
   }
 ]
