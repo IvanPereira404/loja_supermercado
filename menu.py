@@ -1,5 +1,5 @@
 from crudCategorias import list_categorias
-from produtos import *
+from CrudProdutos import *
 from crudclientes import *
 from crudfornecedores import *
 from crudfuncionarios import *
