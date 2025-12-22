@@ -5,8 +5,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DADOS = os.path.join(BASE_DIR, "clientes.json")
 
-#faz a leitura de dados JSON
+
 def data_read():
+    """Lê e retorna todos os clientes do arquivo.
+
+    Se o arquivo for vazio ou corrompido, reescrevemos um array vazio.
+
+    Returns:
+        lista de clientes (ou [] se o arquivo for vazio ou corrompido)
+    """
     if not os.path.exists(DADOS):
         return []
 

@@ -1,4 +1,4 @@
-from produtos import *
+from CrudProdutos import *
 
 def menu_principal():
     print("Menu:")
